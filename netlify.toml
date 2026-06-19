@@ -2,6 +2,9 @@
   publish = "static"
   functions = "netlify/functions"
 
+[functions]
+  included_files = ["views/**"]
+
 [[redirects]]
   from = "/static/*"
   to = "/static/:splat"
