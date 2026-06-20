@@ -8,21 +8,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('static'));
 
+
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
+app.set("views", "./views");
+// app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  res.render('index', {
-    test: 'Test the word',
-  });
+
+const router = require('./routes/route');
+app.use('/', router);
+
+
+// Start the server
+app.listen(3000, () => {
+  console.log(`Server listening in http://localhost:${PORT}`);
 });
 
-app.listen(PORT, async () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  const { data, error } = await supabase.from('Groceries').select('*').limit(1);
-  if (error) {
-    console.error('Supabase connection failed:', error.message);
-  } else {
-    console.log('Supabase connected. Groceries table found:', data);
-  }
-});

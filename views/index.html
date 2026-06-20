@@ -1,57 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Test</title>
+    <title><%= title || 'Default Title' %></title>
+    <% if (stylesheets) { %>
+    <% stylesheets.forEach(function (stylesheet) { %>
+    <link rel="stylesheet" href="<%= stylesheet %>">
+    <% }); %>
+    <% } %>
 </head>
-
 <body>
-    <main class="main-content">
-        <header class="list-title-container">
-            <%- include('partials/svg', { id: 'icon-placeholder' , width: 24, height: 24 }) %>
-                <div class="content">
-                    <h1 class="page-title">Lista di tienda</h1>
-                    <h2 class="description"> Total di <span class="amount">9</span> kos</>
-                </div>
+<header id="top">
+    <%- include('./partials/header.html')%>
+</header>
 
-                <button class="list-view">
-                    list or block
-                </button>
-        </header>
+<main id="main" class="content-grid">
+    <% if (content) { %>
+    <%- include(content) %>
+    <% } else { %>
+    <p>No content available.</p>
+    <% } %>
+</main>
 
-        <section class="overview-container">
-            <ul class="items">
-                <li class="item">
-                    <label>
-                        <input type="checkbox">
-                    </label>
-                    <article class="item-content">
-                        <figure class="img-container">
-                            <img src="#" alt="">
-                        </figure>
-                        <small class="amount"></small>
+<footer id="bottom">
 
-                        <h3 class="grocery-name">Apple</h3>
-                        <p class="price">2 euro</p>
+    <div class="copyright">
+        <p>&copy; <%= new Date().getFullYear() %> Grocery app. All rights reserved.</p>
+    </div>
+</footer>
 
-                        <button class="delete-button">
-                            <span>Delete</span>
-                        </button>
-                    </article>
+<%- include('./partials/add-items-form.html')%>
 
-                </li>
-            </ul>
-        </section>
-        <button class="add-item-button">
-            <span>+</span>
-        </button>
-    </main>
-    <!-- TODO: I NEED THE  BLOCK OVERVIEW -->
-    <!-- TODO: I NEED THE FORM -->
-    <!-- TODO: I NEED THE LIST OVERVIEW -->
+
+<% if (scripts) { %>
+<% scripts.forEach(function (script) { %>
+<script src="<%= script %>"></script>
+<% }); %>
+<% } %>
 </body>
-
 </html>

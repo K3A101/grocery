@@ -1,14 +1,33 @@
 :root {
-  --primary-color: #F8CECF;
-  --secondary-color: #FF8F69;
-  --background-color: #FEFBF6;
+  --primary: #F8CECF;
+  --secondary: #B7E1FF;
+  --tertiary: #6B2E7A;
+  --background: #FEFBF6;
   --white: #ffffff;
   --black: #000;
+  --gradient-primary: linear-gradient(90deg, #C6BFF1, #B4E3FF);
+  --form-gradient: linear-gradient(90deg, #fff 1%, #B4E3FF 50%, #C6BFF1 87%);
+  
+  --text: #181818;
 
-
-  --font-family: 'Arial', sans-serif;
+  --font-family: 'Iosevka Charon', sans-serif;
   --font-size-base: 16px;
 
   --padding-base: 1rem;
   --margin-base: 1rem;
+  --gap-sm: 1rem;
+  --gap-md: 1.6rem;
+  --gap-lg: 2rem;
+  --radius-sm:.4rem;
+  --radius-md: .8rem;
+  --radius-round: 50%;
+  
+  // for the checkbox
+  --active: #275EFE;
+  --active-inner: #fff;
+  --focus: 2px rgba(39, 94, 254, .3);
+  --border: #BBC1E1;
+  --border-hover: #275EFE;
+  --disabled: #F6F8FF;
+  --disabled-inner: #E1E6F9;
 }

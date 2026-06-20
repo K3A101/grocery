@@ -1,24 +1,207 @@
+@use "./helpers/mixins" as *;
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  background-color: var(--background-color);
-  color: var(--secondary-color);
+    font-size: 1.6rem;
+    font-family: var(--font-family), sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height:  100vh;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--padding-base);
+main {
+    min-height: 80vh;
 }
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-md);
+    align-items: center;
+    padding: 3rem 0;
+    
+    .content {
+        flex: 1;
+    }
+}
+
+header#top,
+footer#bottom > *,
+.content-grid {
+    --padding-inline: 3rem;
+    --content-max-width: 60rem;
+    --breakout-max-size: 126rem;
+    --breakout-size: calc((var(--breakout-max-size) - var(--content-max-width)) / 2);
+    display: grid;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+            [breakout-start] minmax(0, var(--breakout-size))
+                [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end]
+            minmax(0, var(--breakout-size)) [breakout-end]
+        minmax(var(--padding-inline), 1fr) [full-width-end];
+    
+    @include respond-to(up-to-sm) {
+        --padding-inline: 1.5rem;
+    }
+    
+    @include respond-to(from-md) {
+        --content-max-width: 70rem;
+        --padding-inline: 3rem;
+    }
+    
+    @include respond-to(from-lg) {
+        --content-max-width: 110rem;
+        --breakout-max-size: 168rem;
+    }
+    
+    @include respond-to(from-xxl) {
+        --content-max-width: 110rem;
+    }
+    
+    &.two-third {
+        --content-max-width: 108rem;
+        --breakout-max-size: 128rem;
+    }
+    
+    &.half {
+        --content-max-width: 72rem;
+        --breakout-max-size: 84rem;
+    }
+    
+    > :not(.breakout, .full-width) {
+        grid-column: content;
+    }
+    
+    > .breakout {
+        grid-column: breakout;
+    }
+    
+    > .full-width {
+        grid-column: full-width;
+    }
+    
+    img.wrapper-background {
+        grid-column: auto;
+    }
+}
+
+.overview-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-md);
+    
+    .items {
+        list-style: none;
+        
+        .item {
+            background: var(--primary);
+            border-radius: var(--radius-sm);
+            position: relative;
+            padding: 1rem;
+            
+            .img-container {
+                background: var(--white);
+                border-radius: var(--radius-sm);
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: var(--radius-sm);
+                }
+            }
+            
+            .item-content {
+                display: flex;
+                flex-direction: row;
+                gap: var(--gap-md);
+                align-items: center;
+                
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap:  var(--gap-sm);
+                    flex: 1;
+                }
+            }
+            
+            .checkbox-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: var(--gap-md);
+            }
+            
+        }
+        
+        &.block {
+            
+            
+            .img-container {
+                aspect-ratio: 175/131;
+            }
+            
+            .item-content {
+                flex-direction: row;
+                gap: var(--gap-md);
+                align-items: center;
+            }
+            
+            .checkbox-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: var(--gap-md);
+            }
+        }
+        
+        &.list {
+            
+            .item {
+                display: flex;
+                flex-direction: row;
+                gap: var(--gap-md);
+                
+                
+                .img-container {
+                    aspect-ratio: 80/80;
+                }
+                
+                .item-content {
+                    width: 100%;
+                }
+                
+                .text {
+                    width: 100%;
+                }
+                
+                .checkbox-wrapper {
+                    position: static;
+                    margin: var(--gap-md);
+                }
+                
+            }
+        }
+        
+        &:has(input[type="checkbox"]:checked) {
+            opacity: .5;
+        }
+    }
+    
+    &:has(.items.list) {
+        display: flex;
+        flex-direction:  column;
+        gap: var(--gap-md);
+    }
+}
+
