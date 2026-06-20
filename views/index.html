@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Test</title>
 </head>
-<body>
-    <h1><%= test %></h1>
-    <%- include('partials/svg.html', { id: 'icon-placeholder', width: 24, height: 24 }) %>
 
+<body>
+    <main class="main-content">
+        <header class="list-title-container">
+            <%- include('partials/svg', { id: 'icon-placeholder' , width: 24, height: 24 }) %>
+                <div class="content">
+                    <h1 class="page-title">Lista di tienda</h1>
+                    <h2 class="description"> Total di <span class="amount">9</span> kos</>
+                </div>
+
+                <button class="list-view">
+                    list or block
+                </button>
+        </header>
+
+        <section class="overview-container">
+            <ul class="items">
+                <li class="item">
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                    <article class="item-content">
+                        <figure class="img-container">
+                            <img src="#" alt="">
+                        </figure>
+                        <small class="amount"></small>
+
+                        <h3 class="grocery-name">Apple</h3>
+                        <p class="price">2 euro</p>
+
+                        <button class="delete-button">
+                            <span>Delete</span>
+                        </button>
+                    </article>
+
+                </li>
+            </ul>
+        </section>
+        <button class="add-item-button">
+            <span>+</span>
+        </button>
+    </main>
     <!-- TODO: I NEED THE  BLOCK OVERVIEW -->
     <!-- TODO: I NEED THE FORM -->
     <!-- TODO: I NEED THE LIST OVERVIEW -->
 </body>
+
 </html>
