@@ -1,0 +1,20 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  color: var(--secondary-color);
+  margin-bottom: var(--margin-base);
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin-bottom: var(--margin-base);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="icon-placeholder" viewBox="0 0 24 24">
+      <!-- replace with actual path data -->
+      <circle cx="12" cy="12" r="10" fill="none" stroke="var(--icon-color, #000)" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>

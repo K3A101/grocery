@@ -1,0 +1,12 @@
+<%
+  var _filename = locals.filename || 'general.svg';
+  var _ariaLabel = locals.ariaLabel || locals.id;
+  var _class = locals.class ? ' ' + locals.class : '';
+%>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="<%= locals.width %>"
+     height="<%= locals.height %>"
+     aria-label="<%= _ariaLabel %>"
+     class="svg-<%= locals.id %><%= _class %>">
+  <use href="/svg/<%= _filename %>#<%= locals.id %>"></use>
+</svg>
