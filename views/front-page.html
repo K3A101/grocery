@@ -2,29 +2,29 @@
 
     <section class="overview-container">
         <ul class="items list">
+            <% groceries.forEach(function(item) { %>
             <li class="item">
                 <label class="checkbox-wrapper">
                     <input id="list-checkbox" type="checkbox">
                 </label>
 
                 <figure class="img-container">
-                    <img src="#" alt="">
+                    <img src="<%= item.image || '#' %>" alt="<%= item.name %>">
                 </figure>
                 <article class="item-content">
-                    <small class="amount"><span class="count">1</span>x</small>
+                    <small class="amount"><span class="count"><%= item.amount %></span>x</small>
 
                     <div class="text">
-                        <h3 class="grocery-name">Apple</h3>
-                        <p class="price">2 euro</p>
+                        <h3 class="grocery-name"><%= item.name %></h3>
+                        <p class="price"><%= item.price %> euro</p>
                     </div>
 
-
-                    <button class=" button delete-button">
+                    <button class="button delete-button">
                         <%- include('partials/svg.html', { id: 'delete' , width: 20, height: 20, ariaLabel: 'Verwijderen' }) %>
                     </button>
                 </article>
-
             </li>
+            <% }); %>
         </ul>
     </section>
     <button popovertarget="form-popover" class="button add-item-button">

@@ -205,3 +205,11 @@ footer#bottom > *,
     }
 }
 
+#form-popover {
+    margin: auto;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.43);
+    }
+}
+

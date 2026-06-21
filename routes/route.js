@@ -1,20 +1,27 @@
 
 const express = require("express");
 const router = express.Router();
+const supabase = require('../supabase/supabase-config');
 
-// const { createClient } = require('@supabase/supabase-js')
+router.get('/', async (req, res) => {
+    console.log('route hit');
+    const { data: groceries, error } = await supabase
+        .from('Groceries')
+        .select('*');
 
-// const supabaseUrl = process.env.SUPABASE_URL
-// const supabaseKey = process.env.SUPABASE_KEY
-// const supabase = createClient(supabaseUrl, supabaseKey)
+    console.log('groceries:', groceries);
+    console.log('error:', error);
 
-// Homepagina
-router.get('/', (req, res) => {
+    if (error) {
+        console.error('Error fetching groceries:', error.message);
+    }
+
     res.render('index', {
         title: 'Home Page',
-        content: './front-page.html', // Embed home.ejs
+        content: './front-page.html',
         stylesheets: ['/css/style.css'],
-        scripts: ['/js/script.js']
+        scripts: ['/js/script.js'],
+        groceries: groceries || []
     });
 });
 
