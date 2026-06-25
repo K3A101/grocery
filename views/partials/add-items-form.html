@@ -1,34 +1,40 @@
 <div id="form-popover" popover="auto">
-<form action="/" method="post">
-    <h2 class="form-title">Traha bo lista</h2>
-      <div class="input-container">
+<!--    <button popovertarget="form-popover" class="button add-item-button popover-close-button">-->
+<!--        <%- include('svg.html', { id: 'add' , width: 32, height: 32, ariaLabel: 'Sluiten' }) %>-->
+<!--    </button>-->
+    <form action="/add-item" method="post" class="add-items-form">
+        <h2 class="form-title">Traha bo lista</h2>
+        <div class="input-container">
             <label for="grocery">Grocery name</label>
-            <input type="text" id="grocery">
+            <input type="text" id="grocery" name="name" required>
+        </div>
+        <div class="input-container description">
+            <label for="description">description</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <div class="input-container file">
+            <label for="image">Image</label>
+            <figure class="img-container">
+                <img src="#" alt="">
+            </figure>
+            <input type="file" id="image" name="images">
         </div>
         <div class="input-container">
-            <label for="decription">description</label>
-            <input type="text" id="description">
-        </div>
-        <div class="input-container">
-            <img src="" alt="">
-            <label for="image">Grocery name</label>
-            <input type="file" id="image">
-        </div>
-        <div class="input-container">
-            <label for="price">Grocery name</label>
-            <input type="number" id="price">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" step="0.01">
         </div>
 
         <div class="input-group input-number-group">
             <button type="button" class="input-group-button input-number-decrement">
                 <span>-</span>
             </button>
-            <input type="number" class="js-item-qty" value="1" for="943">
+            <input type="number" class="js-item-qty" name="quantity" value="1" for="943">
             <button type="button" class="input-group-button input-number-increment">
                 <span>+</span>
             </button>
         </div>
 
-        <button type="submit"><span>Add item</span></button>
-</form>
+        <button type="submit" class="button primary"><span>Add item</span></button>
+    </form>
 </div>
+

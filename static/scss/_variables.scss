@@ -5,8 +5,9 @@
   --background: #FEFBF6;
   --white: #ffffff;
   --black: #000;
-  --gradient-primary: linear-gradient(90deg, #C6BFF1, #B4E3FF);
-  --form-gradient: linear-gradient(90deg, #fff 1%, #B4E3FF 50%, #C6BFF1 87%);
+  --gradient-primary: linear-gradient(180deg, #C6BFF1, #B4E3FF);
+  --form-gradient: linear-gradient(-180deg, #fff 1%, #B4E3FF 50%, #C6BFF1 87%);
+  --border: #A1A1A1;
   
   --text: #181818;
 
@@ -32,5 +33,5 @@
   --disabled-inner: #E1E6F9;
 
 
-  --popover-backdrop: 
+  --popover-backdrop: rgba(0 0 0/0.5)
 }
