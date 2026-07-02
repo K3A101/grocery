@@ -7,6 +7,8 @@ const supabase = require('./supabase/supabase-config');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('static'));
+app.use('/node_modules', express.static('node_modules'));
+
 
 
 app.set('view engine', 'html');

@@ -2,7 +2,7 @@
 <!--    <button popovertarget="form-popover" class="button add-item-button popover-close-button">-->
 <!--        <%- include('svg.html', { id: 'add' , width: 32, height: 32, ariaLabel: 'Sluiten' }) %>-->
 <!--    </button>-->
-    <form action="/add-item" method="post" class="add-items-form">
+    <form action="/add-item" method="post" class="add-items-form" enctype="multipart/form-data">
         <h2 class="form-title">Traha bo lista</h2>
         <div class="input-container">
             <label for="grocery">Grocery name</label>
@@ -14,10 +14,10 @@
         </div>
         <div class="input-container file">
             <label for="image">Image</label>
-            <figure class="img-container">
-                <img src="#" alt="">
+            <figure class="img-container image-preview-container" style="display: none;">
+                <img id="image-preview" src="#" alt="Image preview">
             </figure>
-            <input type="file" id="image" name="images">
+            <input type="file" id="image" name="image" accept="image/*">
         </div>
         <div class="input-container">
             <label for="price">Price</label>

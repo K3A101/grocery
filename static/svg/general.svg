@@ -11,6 +11,35 @@
     </symbol>
     <symbol id="delete" viewBox="0 -960 960 960"><path d="M292.31-140q-29.83 0-51.07-21.24Q220-182.48 220-212.31V-720h-10q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37Q197.25-780 210-780h150q0-14.69 10.35-25.04 10.34-10.34 25.03-10.34h169.24q14.69 0 25.03 10.34Q600-794.69 600-780h150q12.75 0 21.37 8.63 8.63 8.63 8.63 21.38 0 12.76-8.63 21.37Q762.75-720 750-720h-10v507.69q0 29.83-21.24 51.07Q697.52-140 667.69-140H292.31ZM680-720H280v507.69q0 5.39 3.46 8.85t8.85 3.46h375.38q5.39 0 8.85-3.46t3.46-8.85V-720ZM427.54-288.62q8.61-8.63 8.61-21.38v-300q0-12.75-8.63-21.38-8.62-8.62-21.38-8.62-12.75 0-21.37 8.62-8.61 8.63-8.61 21.38v300q0 12.75 8.62 21.38 8.63 8.62 21.39 8.62 12.75 0 21.37-8.62Zm147.69 0q8.61-8.63 8.61-21.38v-300q0-12.75-8.62-21.38-8.63-8.62-21.39-8.62-12.75 0-21.37 8.62-8.61 8.63-8.61 21.38v300q0 12.75 8.63 21.38 8.62 8.62 21.38 8.62 12.75 0 21.37-8.62ZM280-720v520-520Z" fill="var(--icon-color, #000)"/></symbol>
     <symbol id="add" viewBox="0 -960 960 960"><path d="M450-450H250q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37Q237.25-510 250-510h200v-200q0-12.75 8.63-21.37 8.63-8.63 21.38-8.63 12.76 0 21.37 8.63Q510-722.75 510-710v200h200q12.75 0 21.37 8.63 8.63 8.63 8.63 21.38 0 12.76-8.63 21.37Q722.75-450 710-450H510v200q0 12.75-8.63 21.37-8.63 8.63-21.38 8.63-12.76 0-21.37-8.63Q450-237.25 450-250v-200Z" fill="var(--icon-color, #000)"/></symbol>
-
+    <symbol id="list-view"  viewBox="0 0 42 29" fill="none">
+      <rect width="42" height="5" fill="#C2C7F4"/>
+      <rect y="8" width="42" height="5" fill="#C2C7F4"/>
+      <rect y="16" width="42" height="5" fill="#C2C7F4"/>
+      <rect y="24" width="42" height="5" fill="#C2C7F4"/>
+    </symbol>
+    <symbol id="block-view" viewBox="0 0 32 34" fill="none">
+      <rect width="15" height="16" fill="url(#paint0_linear_31_655)"/>
+      <rect x="17" width="15" height="16" fill="url(#paint1_linear_31_655)"/>
+      <rect y="18" width="15" height="16" fill="url(#paint2_linear_31_655)"/>
+      <rect x="17" y="18" width="15" height="16" fill="url(#paint3_linear_31_655)"/>
+      <defs>
+        <linearGradient id="paint0_linear_31_655" x1="7.5" y1="0" x2="7.5" y2="16" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C6BFF1"/>
+          <stop offset="1" stop-color="#B4E3FF"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_31_655" x1="24.5" y1="0" x2="24.5" y2="16" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C6BFF1"/>
+          <stop offset="1" stop-color="#B4E3FF"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_31_655" x1="7.5" y1="18" x2="7.5" y2="34" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C6BFF1"/>
+          <stop offset="1" stop-color="#B4E3FF"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_31_655" x1="24.5" y1="18" x2="24.5" y2="34" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C6BFF1"/>
+          <stop offset="1" stop-color="#B4E3FF"/>
+        </linearGradient>
+      </defs>
+    </symbol>
   </defs>
 </svg>

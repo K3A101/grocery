@@ -95,9 +95,7 @@ footer#bottom > *,
 }
 
 .overview-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-md);
+  
 
     .items {
         list-style: none;
@@ -115,9 +113,16 @@ footer#bottom > *,
 
                 img {
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    height: auto;
+                    object-fit: contain;
+                    object-position: center;
                     border-radius: var(--radius-sm);
+                }
+            }
+            
+            .description {
+                &:empty {
+                    display: none;
                 }
             }
 
@@ -141,11 +146,23 @@ footer#bottom > *,
                 left: 0;
                 margin: var(--gap-md);
             }
+            
+            &.checked {
+                opacity: 0.5;
+            }
         }
 
         &.block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap-md);
+            
             .img-container {
                 aspect-ratio: 175/131;
+                
+                img {
+                    height: 100%;
+                }
             }
 
             .item-content {
@@ -162,7 +179,7 @@ footer#bottom > *,
             }
         }
 
-        &.list {
+        &:not(.block) {
             display: flex;
             gap: var(--gap-md);
             flex-direction: column;
@@ -171,9 +188,14 @@ footer#bottom > *,
                 display: flex;
                 flex-direction: row;
                 gap: var(--gap-md);
+                width: 100%;
 
                 .img-container {
-                    aspect-ratio: 80/80;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   block-size: 8rem;
+                    aspect-ratio: 1/1;
                 }
 
                 .item-content {
@@ -190,13 +212,11 @@ footer#bottom > *,
                 }
             }
         }
-
-        &:has(input[type="checkbox"]:checked) {
-            opacity: 0.5;
-        }
     }
+    
+    
 
-    &:has(.items.list) {
+    &:has(.items:not(.block)) {
         display: flex;
         flex-direction: column;
         gap: var(--gap-md);
