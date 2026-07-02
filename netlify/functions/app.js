@@ -1,17 +1,5 @@
 const serverless = require('serverless-http');
-const express = require('express');
-const path = require('path');
-const app = express();
+const app = require('../../app');
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-app.set('views', path.join(process.cwd(), 'views'));
-app.set('view engine', 'html');
-app.engine('html', require('ejs').renderFile);
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
+// Wrap the Express app with serverless-http for Netlify Functions
 module.exports.handler = serverless(app);

@@ -21,8 +21,12 @@ const router = require('./routes/route');
 app.use('/', router);
 
 
-// Start the server
-app.listen(3000, () => {
-  console.log(`Server listening in http://localhost:${PORT}`);
-});
+// Export the app for use in Netlify functions
+module.exports = app;
 
+// Start the server only when running locally (not when imported)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server listening in http://localhost:${PORT}`);
+  });
+}
